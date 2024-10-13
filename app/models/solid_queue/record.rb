@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SolidQueue
-  class Record < ActiveRecord::Base
+  class Record < SolidQueue.record_base_class.constantize
     self.abstract_class = true
 
     connects_to(**SolidQueue.connects_to) if SolidQueue.connects_to
